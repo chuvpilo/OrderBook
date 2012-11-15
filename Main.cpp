@@ -54,6 +54,7 @@ int main(int argc, char* argv[]) {
 				trading::MarketDataProvider::getInstance().readMarketDataFile(argv[2]);
 			} catch (const trading::BadMarketDataFile& e) {
 				FILE_LOG(logERROR) << "Error opening the market data file";
+				abort();
 			}
 			break;
 		default:
